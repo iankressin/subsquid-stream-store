@@ -1,6 +1,6 @@
 # @subsquid/stream-store
 
-This package is a library that allows you to stream decoded data from a squid to a message queue.
+This package allows you to stream decoded data from a squid to a message queue.
 
 ## Installation
 
