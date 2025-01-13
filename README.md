@@ -5,6 +5,7 @@ This package is a library that allows you to stream decoded data from a squid to
 ## Installation
 
 ```bash
+# (not real package name)
 npm install @subsquid/stream-store
 ```
 
