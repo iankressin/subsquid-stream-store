@@ -1,5 +1,5 @@
 {
-  "name": "@subsquid/stream-store",
+  "name": "subsquid-stream-store",
   "version": "1.0.0",
   "description": "Stream store for Subsquid",
   "main": "lib/index.js",
