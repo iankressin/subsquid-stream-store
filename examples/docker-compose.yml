@@ -1,20 +1,6 @@
 version: "3"
 
 services:
-  # db:
-  #   image: postgres:15
-  #   environment:
-  #     POSTGRES_DB: squid
-  #     POSTGRES_PASSWORD: postgres
-  #   ports:
-  #     - "${DB_PORT}:5432"
-  #   shm_size: 1gb
-  #   healthcheck:
-  #     test: ["CMD", "pg_isready", "-U", "postgres"]
-  #     interval: 5s
-  #     timeout: 3s
-  #     retries: 5
-
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: zookeeper
@@ -83,33 +69,8 @@ services:
       timeout: 3s
       retries: 5
 
-  # producer:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     - RABBITMQ_URI=amqp://user:password@rabbitmq:5672
-  #     - REDIS_HOST=redis
-  #     - REDIS_PORT=6379
-  #     - KAFKA_BROKER_URI=kafka:9092
-  #     - DB_URL=postgresql://postgres:postgres@db:5432/squid
-  #     - SQD_GATEWAY=https://v2.archive.subsquid.io/network/ethereum-mainnet
-  #     - SQD_RPC_ENDPOINT=https://eth.llamarpc.com
-  #   volumes:
-  #     - producer_data:/app
-  #   restart: always
-  #   command: sh -c "npm run start:producer"
-  #   depends_on:
-  #     rabbitmq:
-  #       condition: service_healthy
-  #     redis:
-  #       condition: service_healthy
-  #     db:
-  #       condition: service_healthy
-
 volumes:
   rabbitmq_data:
-  producer_data:
   redis_data:
   zookeeper_data:
   zookeeper_log:
