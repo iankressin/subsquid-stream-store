@@ -10,7 +10,6 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "examples": "cd examples && npm run build && cp -r ./lib .examples/stream-store && docker compose up --build"
   },
   "author": "",
   "license": "ISC",
