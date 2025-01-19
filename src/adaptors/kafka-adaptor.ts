@@ -25,15 +25,15 @@ export class KafkaAdaptor<E extends Entity> extends StreamAdaptor<
   public async publish(p: KafkaPublishParams<E>): Promise<void> {
     await this.producer.send({
       topic: this.queueName,
-      messages: p.data.map((e) => ({ value: JSON.stringify(e) })),
+      messages: p.data.map(e => ({ value: JSON.stringify(e) })),
     });
   }
 
   public async batchPublish(p: KafkaPublishParams<E>[]) {
     await this.producer.sendBatch({
-      topicMessages: p.map((e) => ({
+      topicMessages: p.map(e => ({
         topic: this.queueName,
-        messages: e.data.map((d) => ({ value: JSON.stringify(d) })),
+        messages: e.data.map(d => ({ value: JSON.stringify(d) })),
       })),
     });
   }

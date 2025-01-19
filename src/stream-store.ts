@@ -29,7 +29,7 @@ const STATUS_FILE_NAME = "status.json";
  */
 export class StreamStore<
   PublishParams,
-  Adaptor extends StreamAdaptor<PublishParams>
+  Adaptor extends StreamAdaptor<PublishParams>,
 > {
   supportHotBlocks = false;
 
@@ -49,7 +49,7 @@ export class StreamStore<
 
   public async transact(
     info: FinalTxInfo,
-    cb: (store: Adaptor) => Promise<void>
+    cb: (store: Adaptor) => Promise<void>,
   ): Promise<void> {
     await this.updateStatus(info.nextHead);
     await cb(this.streamAdaptor);
