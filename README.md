@@ -78,8 +78,8 @@ In two separate terminals, run the producer and consumer:
 
 ```bash
 # Terminal 1
-npm run examples:producer
+npm run start:producer
 
 # Terminal 2
-npm run examples:consumer
+np run start:consumer
 ```
